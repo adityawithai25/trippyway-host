@@ -1,0 +1,203 @@
+{
+  "title": "Manali | Sissu | Kasol | Manikaran Christmas & New Year Special 2024-25",
+  "trip_duration": "4 Nights / 5 Days",
+  "package_type": "Group Departure Package",
+  "batch_departures": {
+    "christmas_batches": [
+      "23rd December – Celebrate Christmas Eve in Manali",
+      "24th December – Christmas Day in the Mountains",
+      "27th December – Pre-New Year Adventure"
+    ],
+    "new_year_batches": [
+      "28th December – Ring in 2025 at Kasol",
+      "29th December – NYE Party in Manali (Most Popular!)",
+      "30th December – Last Chance for 2025 Celebration"
+    ],
+    "boarding_time": "6:00 PM",
+    "boarding_locations": ["Delhi", "Chandigarh"]
+  },
+  "itinerary": [
+    {
+      "day": 1,
+      "route": "Delhi/Chandigarh → Manali",
+      "highlights": [
+        "Evening departure",
+        "Meet and greet",
+        "Ice-breaking games",
+        "Overnight AC Volvo journey"
+      ],
+      "distance": {
+        "delhi": "540 km",
+        "chandigarh": "310 km"
+      },
+      "travel_time": "12-14 hours"
+    },
+    {
+      "day": 2,
+      "title": "Manali Arrival & Sightseeing",
+      "sections": {
+        "morning": ["Arrival", "Hotel check-in", "Welcome breakfast"],
+        "afternoon": [
+          "Hidimba Devi Temple",
+          "Van Vihar",
+          "Tibetan Monastery",
+          "Lunch break"
+        ],
+        "evening": ["Mall Road shopping", "Café hopping (optional)"],
+        "night": ["Dinner", "DJ Night", "Bonfire", "Stargazing"]
+      },
+      "stay": "Manali Hotel"
+    },
+    {
+      "day": 3,
+      "title": "Solang Valley & Sissu Excursion",
+      "activities": {
+        "included": ["Sightseeing", "DJ Night", "Bonfire"],
+        "additional_cost": [
+          "Paragliding",
+          "Zorbing",
+          "ATV Ride",
+          "Ropeway",
+          "Snow Dress",
+          "Skiing"
+        ]
+      },
+      "travel": ["Solang Valley", "Atal Tunnel", "Sissu Valley"],
+      "stay": "Manali Hotel"
+    },
+    {
+      "day": 4,
+      "title": "Kullu → Manikaran → Kasol",
+      "adventure": {
+        "rafting": "8-10 km stretch with safety gear",
+        "manikaran": ["Hot spring dip", "Langar", "Temple visit"]
+      },
+      "evening": "Bonfire + Live Music",
+      "stay": "Kasol Riverside Camps/Hotel"
+    },
+    {
+      "day": 5,
+      "title": "Chalal Trek & Departure",
+      "activities": [
+        "Chalal Village Trek (3.4 km)",
+        "Shopping",
+        "Cafe hopping",
+        "Group photos"
+      ],
+      "departure": "Delhi/Chandigarh"
+    },
+    {
+      "day": 6,
+      "title": "Arrival Delhi/Chandigarh",
+      "time": "Between 6:00 AM - 8:00 AM"
+    }
+  ],
+  "package_inclusions": {
+    "accommodation": [
+      "2 Nights Hotel in Manali",
+      "1 Night Kasol Camp/Hotel",
+      "Sharing: Double/Triple/Quad"
+    ],
+    "transportation": [
+      "Delhi/Chandigarh → Manali AC Volvo",
+      "Internal transfers",
+      "Return journey"
+    ],
+    "meals": {
+      "breakfasts": 3,
+      "dinners": 3,
+      "veg_nonveg_available": true
+    },
+    "activities": [
+      "3 DJ Nights",
+      "3 Bonfires",
+      "Chalal Trek",
+      "River Rafting",
+      "Professional Guide"
+    ],
+    "sightseeing": [
+      "Solang Valley",
+      "Sissu",
+      "Atal Tunnel",
+      "Hidimba Temple",
+      "Manikaran Sahib",
+      "Kasol Market"
+    ],
+    "special": ["Coordinator", "Group Photos", "First Aid"]
+  },
+  "exclusions": [
+    "Adventure activity charges",
+    "Personal expenses",
+    "Unmentioned meals",
+    "Entry fees",
+    "Insurance",
+    "GST 5%",
+    "Rohtang Permit",
+    "Weather disruption expenses"
+  ],
+  "pricing": {
+    "quad_sharing": "₹6,999",
+    "triple_sharing": "₹7,499",
+    "double_sharing": "₹8,999",
+    "discounts": {
+      "group_8_15": "₹200 off",
+      "group_15_plus": "₹500 off + customization",
+      "early_bird_30_days": "₹300 off",
+      "early_bird_20_days": "₹200 off"
+    }
+  },
+  "special_experiences": {
+    "christmas": [
+      "Tree decoration",
+      "Secret Santa",
+      "Carol singing",
+      "Cake cutting"
+    ],
+    "new_year": [
+      "Countdown party",
+      "Fireworks",
+      "Sunrise trek",
+      "NYE props",
+      "Cake ceremony"
+    ]
+  },
+  "contact": {
+    "company": "Tripyway",
+    "phone": "+91-9250294508",
+    "website": "www.tripyway.com",
+    "email": "contact@tripyway.com",
+    "social": {
+      "instagram": "@tripyway",
+      "facebook": "Tripyway Official"
+    },
+    "booking_process": [
+      "Contact",
+      "Pay advance (40%)",
+      "Receive confirmation",
+      "Pay remaining before departure"
+    ]
+  },
+  "what_to_pack": {
+    "clothing": ["Warm jacket", "T-shirts", "Thermals", "Woolen socks"],
+    "essentials": ["Power bank", "Camera", "Sunscreen", "ID proof"],
+    "optional": ["Guitar", "Speaker", "UNO cards"]
+  },
+  "important_notes": [
+    "Age limit: 18-45",
+    "Moderate fitness required",
+    "Weather dependent activities",
+    "Responsible drinking"
+  ],
+  "why_choose_us": [
+    "Experienced coordinators",
+    "Best price",
+    "Safe travel",
+    "24/7 support"
+  ],
+  "testimonials": [
+    "Came alone, left with 20 friends.",
+    "Best New Year of my life!",
+    "Felt like family."
+  ],
+  "final_remark": "Limited Slots  Book Now"
+}

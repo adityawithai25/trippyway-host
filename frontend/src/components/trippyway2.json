@@ -1,0 +1,661 @@
+{
+  "brand": "TRIPYWAY",
+  "title": "Manali | Sissu | Kasol Special Packages",
+  "season": "Christmas & New Year 2024-25",
+  "duration_options": [
+    "3 Days/2 Nights",
+    "4 Days/3 Nights"
+  ],
+  "departure_info": {
+    "from_locations": [
+      "Delhi",
+      "Chandigarh"
+    ],
+    "time": "6:00 PM"
+  },
+  "batch_departure_schedule": {
+    "christmas_batches_3D2N": {
+      "label": "CHRISTMAS SPECIAL BATCHES (3D/2N)",
+      "batches": [
+        {
+          "date": "22nd Dec",
+          "type": "Couples Only",
+          "duration": "3D/2N",
+          "highlights": "Romantic Manali Escape",
+          "status": "Filling Fast!"
+        },
+        {
+          "date": "23rd Dec",
+          "type": "Girls Only",
+          "duration": "3D/2N",
+          "highlights": "Christmas Eve Girls Gang",
+          "status": "Limited Seats!"
+        },
+        {
+          "date": "24th Dec",
+          "type": "Boys Only",
+          "duration": "3D/2N",
+          "highlights": "Christmas Adventure",
+          "status": "Available!"
+        },
+        {
+          "date": "25th Dec",
+          "type": "Mixed Group",
+          "duration": "3D/2N",
+          "highlights": "Post-Christmas Fun",
+          "status": "Available!"
+        }
+      ]
+    },
+    "new_year_batches_4D3N": {
+      "label": "NEW YEAR SPECIAL BATCHES (4D/3N)",
+      "batches": [
+        {
+          "date": "26th Dec",
+          "type": "Couples Only",
+          "duration": "4D/3N",
+          "highlights": "Romantic NYE Celebration",
+          "status": "Filling Fast!"
+        },
+        {
+          "date": "27th Dec",
+          "type": "Mixed Group",
+          "duration": "4D/3N",
+          "highlights": "Pre-NYE Party Vibes",
+          "status": "Available!"
+        },
+        {
+          "date": "28th Dec",
+          "type": "Girls Only",
+          "duration": "4D/3N",
+          "highlights": "Girls NYE Celebration",
+          "status": "Almost Full!"
+        },
+        {
+          "date": "29th Dec",
+          "type": "Boys Only",
+          "duration": "4D/3N",
+          "highlights": "Boys NYE Adventure",
+          "status": "Limited Seats!"
+        },
+        {
+          "date": "30th Dec",
+          "type": "Mixed Group",
+          "duration": "4D/3N",
+          "highlights": "Last Minute NYE Magic",
+          "status": "Available!"
+        }
+      ]
+    }
+  },
+  "packages": [
+    {
+      "code": "3D2N",
+      "name": "3 Days / 2 Nights Package",
+      "tagline": "Quick Manali Escape",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Delhi/Chandigarh → Manali",
+          "segment": "Evening Departure",
+          "details": [
+            "6:00 PM: Pickup from Delhi/Chandigarh",
+            "6:30 PM: Meet your Tripyway family - Ice-breaking session",
+            "7:00 PM: Onboard fun - Games, music, bonding",
+            "11:30 PM: Midnight chai/coffee break",
+            "Overnight Journey in comfortable AC Volvo"
+          ],
+          "distance": {
+            "from_delhi": "~540 km",
+            "from_chandigarh": "~310 km"
+          }
+        },
+        {
+          "day": 2,
+          "title": "Manali Sightseeing & Adventure",
+          "segments": {
+            "morning": [
+              "8:00 AM: Arrive in Manali",
+              "9:00 AM: Check into hotel, freshen up",
+              "9:30 AM: Welcome breakfast"
+            ],
+            "day_tour": [
+              "11:00 AM: Hidimba Devi Temple - Ancient wooden architecture",
+              "12:30 PM: Van Vihar - Peaceful garden walk",
+              "1:30 PM: Lunch break (own expense) - Local cuisine",
+              "2:30 PM: Tibetan Monastery - Prayer wheels & peace",
+              "4:00 PM: Mall Road Shopping - Handicrafts, souvenirs",
+              "5:30 PM: Old Manali Cafes - Israeli coffee & vibes"
+            ],
+            "evening_optional": [
+              "6:00 PM: Optional visit to Solang Valley for sunset (weather permitting)",
+              "Photo opportunities with snow-capped peaks"
+            ],
+            "night_party": [
+              "8:00 PM: Delicious dinner at hotel",
+              "9:00 PM: DJ NIGHT & BONFIRE",
+              "Dance under the stars",
+              "Bonfire stories & marshmallows",
+              "Music games & Antakshari",
+              "Stargazing session",
+              "Special for Girls/Boys Batches: Gender-specific bonding activities",
+              "Special for Couples Batch: Romantic candlelight setup by bonfire"
+            ]
+          },
+          "stay": "Manali Hotel"
+        },
+        {
+          "day": 3,
+          "title": "Solang Valley & Departure",
+          "segments": {
+            "morning": [
+              "6:30 AM: Early wake-up call",
+              "7:00 AM: Quick breakfast",
+              "7:30 AM: Depart for Solang Valley"
+            ],
+            "solang_valley": {
+              "time": "8:00 AM to 1:00 PM",
+              "adventure_activities_optional": [
+                "Paragliding (₹1,500-3,000)",
+                "Zorbing (₹300-500)",
+                "Zip-lining (₹300-500)",
+                "ATV Rides (₹500-1,000)",
+                "Skiing (Seasonal, ₹300-800)",
+                "Yak/Horse Rides (₹200-300)",
+                "Snow activities & photo sessions"
+              ]
+            },
+            "afternoon": [
+              "1:00 PM: Lunch at Solang (own expense)",
+              "1:30 PM: Final group photos & memories",
+              "2:00 PM: Depart for Delhi/Chandigarh",
+              "Onboard: Music, photo sharing, goodbyes"
+            ],
+            "evening": [
+              "10:00 PM - 12:00 AM: Reach Delhi/Chandigarh",
+              "Trip concludes with memories!"
+            ]
+          }
+        }
+      ],
+      "inclusions": {
+        "accommodation": [
+          "1 Night in Manali (Double/Triple/Quad sharing)"
+        ],
+        "transportation": [
+          "Delhi/Chandigarh - Manali - Delhi/Chandigarh (AC Volvo)"
+        ],
+        "meals": [
+          "1 Breakfast",
+          "1 Dinner"
+        ],
+        "activities": [
+          "1 DJ Night with Bonfire",
+          "Manali local sightseeing",
+          "Solang Valley visit",
+          "Trip Coordinator",
+          "All tolls, parking, permits"
+        ]
+      }
+    },
+    {
+      "code": "4D3N",
+      "name": "4 Days / 3 Nights Package",
+      "tagline": "Complete Manali-Kasol Experience",
+      "itinerary": [
+        {
+          "day": 1,
+          "title": "Delhi/Chandigarh → Manali",
+          "segment": "Evening Departure",
+          "details": [
+            "6:00 PM: Pickup from Delhi/Chandigarh",
+            "6:30 PM: Meet your Tripyway family",
+            "7:00 PM: Ice-breaking games & music",
+            "11:30 PM: Midnight refreshment stop",
+            "Overnight Journey"
+          ]
+        },
+        {
+          "day": 2,
+          "title": "Manali Local Sightseeing",
+          "segments": {
+            "morning": [
+              "8:00 AM: Arrive in Manali",
+              "9:00 AM: Check into hotel",
+              "9:30 AM: Welcome breakfast"
+            ],
+            "afternoon": [
+              "11:30 AM: Hidimba Devi Temple",
+              "1:00 PM: Van Vihar walk",
+              "2:00 PM: Lunch break (own expense)",
+              "3:00 PM: Tibetan Monastery",
+              "4:30 PM: Mall Road Shopping",
+              "6:00 PM: Old Manali Cafes"
+            ],
+            "night": [
+              "8:00 PM: Dinner at hotel",
+              "9:00 PM: DJ NIGHT & BONFIRE #1",
+              "Dance party",
+              "Group bonding games",
+              "Stargazing"
+            ]
+          },
+          "stay": "Manali Hotel"
+        },
+        {
+          "day": 3,
+          "title": "Solang Valley & Kasol",
+          "segments": {
+            "morning": [
+              "6:30 AM: Early breakfast",
+              "7:30 AM: Depart for Solang Valley"
+            ],
+            "solang_valley": {
+              "time": "8:30 AM to 1:00 PM",
+              "adventure_activities_optional": [
+                "Paragliding",
+                "Zorbing",
+                "Zip-lining",
+                "ATV Rides",
+                "Skiing",
+                "Yak Rides",
+                "Snow activities & photos"
+              ]
+            },
+            "afternoon": [
+              "1:00 PM: Lunch at Solang",
+              "2:00 PM: Drive to Kasol via Kullu Valley (3-4 hours)",
+              "Scenic mountain roads along Beas River"
+            ],
+            "evening_kasol": [
+              "6:00 PM: Check into Riverside Camps/Hotel",
+              "6:30 PM: FREE TIME - Explore Parvati River, Israeli cafes & market, Hemp products shopping"
+            ],
+            "night": [
+              "8:00 PM: Dinner at riverside camps",
+              "9:00 PM: BONFIRE & MUSIC #2",
+              "Acoustic guitar sessions",
+              "Riverside stargazing",
+              "Life stories & connections",
+              "Late night jam session"
+            ]
+          },
+          "stay": "Kasol Riverside Camps"
+        },
+        {
+          "day": 4,
+          "title": "Manikaran & Departure",
+          "segments": {
+            "morning": [
+              "7:00 AM: Wake up to river sounds",
+              "7:30 AM: Breakfast at camps",
+              "8:30 AM: Checkout & depart for Manikaran"
+            ],
+            "manikaran_visit": [
+              "9:00 AM to 12:00 PM",
+              "Manikaran Sahib Gurudwara",
+              "Natural hot springs (60-90°C)",
+              "Shiva Temple & Ram Mandir",
+              "Free Langar (community meal)"
+            ],
+            "afternoon_kasol": [
+              "12:30 PM: Return to Kasol",
+              "1:00 PM: Final Shopping - Hemp bags, jewelry, tie-dye, Israeli bakery treats, dream catchers, prayer flags",
+              "2:00 PM: Last café visit & lunch (own expense)"
+            ],
+            "evening_departure": [
+              "3:00 PM: Final group photos by Parvati River",
+              "3:30 PM: Depart for Delhi/Chandigarh",
+              "Onboard: Photo slideshow, memories shared",
+              "Overnight Journey"
+            ],
+            "next_morning": [
+              "6:00 AM - 8:00 AM: Reach Delhi/Chandigarh",
+              "Trip concludes!"
+            ]
+          }
+        }
+      ],
+      "inclusions": {
+        "accommodation": [
+          "1 Night in Manali (Double/Triple/Quad)",
+          "1 Night in Kasol Riverside Camps (Double/Triple/Quad)"
+        ],
+        "transportation": [
+          "Delhi/Chandigarh to Manali",
+          "Manali to Solang Valley",
+          "Manali to Kasol",
+          "Kasol to Manikaran",
+          "Return to Delhi/Chandigarh",
+          "All in AC Volvo/Tempo Traveler"
+        ],
+        "meals": [
+          "2 Breakfasts",
+          "2 Dinners"
+        ],
+        "activities": [
+          "2 DJ Nights with Bonfire",
+          "Manali sightseeing (Hidimba Temple, Van Vihar, Monastery)",
+          "Solang Valley visit",
+          "Manikaran Gurudwara & Hot Springs",
+          "Kasol market exploration",
+          "Parvati River time",
+          "Trip Coordinator throughout"
+        ],
+        "special_inclusions": [
+          "Group photos & videos",
+          "Ice-breaking games",
+          "First aid kit",
+          "24/7 support",
+          "All toll taxes & parking"
+        ]
+      }
+    }
+  ],
+  "exclusions_common": [
+    "Adventure activities (Paragliding, ATV, Zorbing, etc.)",
+    "Meals not mentioned (Lunches)",
+    "Personal expenses",
+    "Travel insurance",
+    "GST 5%",
+    "Entry fees (if any)",
+    "Any expenses due to weather/roadblocks"
+  ],
+  "pricing": {
+    "3D2N": {
+      "quad_sharing": {
+        "couples": "₹4,999/-",
+        "girls_only": "₹4,499/-",
+        "boys_only": "₹4,499/-",
+        "mixed_group": "₹4,299/-"
+      },
+      "triple_sharing": {
+        "couples": "₹5,499/-",
+        "girls_only": "₹4,999/-",
+        "boys_only": "₹4,999/-",
+        "mixed_group": "₹4,799/-"
+      },
+      "double_sharing": {
+        "couples": "₹5,999/-",
+        "girls_only": "₹5,499/-",
+        "boys_only": "₹5,499/-",
+        "mixed_group": "₹5,299/-"
+      }
+    },
+    "4D3N": {
+      "quad_sharing": {
+        "couples": "₹6,999/-",
+        "girls_only": "₹6,499/-",
+        "boys_only": "₹6,499/-",
+        "mixed_group": "₹6,299/-"
+      },
+      "triple_sharing": {
+        "couples": "₹7,499/-",
+        "girls_only": "₹6,999/-",
+        "boys_only": "₹6,999/-",
+        "mixed_group": "₹6,799/-"
+      },
+      "double_sharing": {
+        "couples": "₹8,999/-",
+        "girls_only": "₹8,499/-",
+        "boys_only": "₹8,499/-",
+        "mixed_group": "₹8,299/-"
+      }
+    }
+  },
+  "discounts": {
+    "group_discounts": [
+      "Groups of 6-10 people: Extra ₹200 OFF per person",
+      "Groups of 10-15 people: Extra ₹350 OFF per person",
+      "Groups of 15+ people: Extra ₹500 OFF per person"
+    ],
+    "early_bird_offers": [
+      "Book by 10th December: ₹300 OFF",
+      "Book by 15th December: ₹200 OFF"
+    ]
+  },
+  "batch_specific_highlights": {
+    "couples_only": [
+      "Romantic bonfire setup with candlelight",
+      "Couple games & activities",
+      "Private photo corners",
+      "Couple-friendly seating arrangements",
+      "Romantic music playlist",
+      "Special couple moments curated"
+    ],
+    "girls_only": [
+      "Safe, comfortable all-girls environment",
+      "Girl bonding activities & games",
+      "Fashion photoshoot sessions",
+      "Girls' night themed events",
+      "Makeup & style sharing time",
+      "Empowering conversations & connections"
+    ],
+    "boys_only": [
+      "Brotherhood bonding activities",
+      "Adventure-focused itinerary",
+      "Sports & competitive games",
+      "Late-night bro talks",
+      "Group challenges & dares",
+      "Epic group photos & moments"
+    ],
+    "mixed_group": [
+      "Diverse group interactions",
+      "Team-based games & activities",
+      "Inclusive bonfire sessions",
+      "Mixed couple + solo travelers",
+      "Maximum networking opportunities",
+      "Vibrant group energy"
+    ]
+  },
+  "seasonal_activities": {
+    "christmas_batches": [
+      "Christmas tree decorating",
+      "Secret Santa gift exchange",
+      "Carol singing by bonfire",
+      "Special Christmas cake cutting",
+      "Christmas-themed games",
+      "Santa cap photo sessions"
+    ],
+    "new_year_batches": [
+      "Midnight countdown party with DJ",
+      "NYE party kit (caps, whistles, confetti)",
+      "Champagne toast (optional purchase)",
+      "New Year cake cutting",
+      "Live music & dancing till dawn",
+      "First sunrise of 2025 viewing",
+      "New Year resolution sharing"
+    ]
+  },
+  "contact": {
+    "company": "TRIPYWAY",
+    "phone": "+91-9250294508",
+    "website": "www.tripyway.com",
+    "email": "contact@tripyway.com",
+    "social": {
+      "instagram": "@tripyway",
+      "facebook": "Tripyway Official"
+    },
+    "booking_process": [
+      "Choose your batch type & date",
+      "Contact on WhatsApp/Call",
+      "Pay 40% booking amount",
+      "Receive confirmation",
+      "Pay 60% by 15th December",
+      "Join WhatsApp group (batch-specific)",
+      "Pack & get ready for adventure!"
+    ]
+  },
+  "what_to_pack": {
+    "essential_items": [
+      "Warm jacket (December is cold!)",
+      "3-4 warm clothes",
+      "Comfortable shoes",
+      "Woolen socks",
+      "Cap, muffler, gloves",
+      "Power bank",
+      "Camera",
+      "Valid ID proof (mandatory)",
+      "Personal medicines",
+      "Sunglasses"
+    ],
+    "optional_items": [
+      "Musical instruments",
+      "Playing cards",
+      "Books"
+    ]
+  },
+  "guidelines": {
+    "couples_batches": [
+      "Valid relationship proof not required",
+      "Couples must book together",
+      "Respectful behavior expected",
+      "PDA within limits appreciated"
+    ],
+    "girls_boys_only_batches": [
+      "Strictly gender-specific",
+      "ID verification mandatory",
+      "Safe, comfortable environment guaranteed",
+      "Zero tolerance for harassment"
+    ],
+    "mixed_batches": [
+      "Solo travelers welcome",
+      "Friendly, inclusive environment",
+      "Respect all participants",
+      "Make friends across groups"
+    ],
+    "general": [
+      "Age: 18-45 years",
+      "Moderate fitness required",
+      "Alcohol: Responsible drinking only",
+      "Respect local culture",
+      "No drugs/substance abuse",
+      "Follow coordinator instructions"
+    ]
+  },
+  "why_choose_tripyway": [
+    "1000+ Happy Travelers",
+    "Batch-Specific Experiences",
+    "Safe & Secure Travel",
+    "Professional Coordinators",
+    "Best Pricing Guaranteed",
+    "24/7 Support",
+    "Transparent Policies",
+    "Memorable Experiences"
+  ],
+  "testimonials": {
+    "couples_batch": "Perfect romantic getaway! The couple activities were so thoughtful. Made beautiful memories. - Raj & Priya",
+    "girls_only_batch": "Felt so safe and empowered! Made 12 new girl friends. Best decision ever! - Sneha, Bangalore",
+    "boys_only_batch": "Brotherhood vibes were insane! From strangers to brothers in 3 days. Epic trip! - Arjun, Delhi",
+    "mixed_group": "Amazing diversity! Met people from all backgrounds. Solo traveler's dream trip! - Neha, Mumbai"
+  },
+  "seat_availability_status": {
+    "christmas_batches_3D2N": [
+      {
+        "date": "22nd Dec",
+        "type": "Couples Only",
+        "status_icon": "🟡",
+        "status": "Filling Fast!"
+      },
+      {
+        "date": "23rd Dec",
+        "type": "Girls Only",
+        "status_icon": "🟠",
+        "status": "Limited Seats!"
+      },
+      {
+        "date": "24th Dec",
+        "type": "Boys Only",
+        "status_icon": "🟢",
+        "status": "Available!"
+      },
+      {
+        "date": "25th Dec",
+        "type": "Mixed Group",
+        "status_icon": "🟢",
+        "status": "Available!"
+      }
+    ],
+    "new_year_batches_4D3N": [
+      {
+        "date": "26th Dec",
+        "type": "Couples Only",
+        "status_icon": "🟡",
+        "status": "Filling Fast!"
+      },
+      {
+        "date": "27th Dec",
+        "type": "Mixed Group",
+        "status_icon": "🟢",
+        "status": "Available!"
+      },
+      {
+        "date": "28th Dec",
+        "type": "Girls Only",
+        "status_icon": "🔴",
+        "status": "Almost Full!"
+      },
+      {
+        "date": "29th Dec",
+        "type": "Boys Only",
+        "status_icon": "🟠",
+        "status": "Limited Seats!"
+      },
+      {
+        "date": "30th Dec",
+        "type": "Mixed Group",
+        "status_icon": "🟢",
+        "status": "Available!"
+      }
+    ]
+  },
+  "quick_decision_guide": {
+    "choose_3D2N_if": [
+      "Quick weekend escape",
+      "Budget-friendly option",
+      "Focus on Manali only",
+      "Short leave from work"
+    ],
+    "choose_4D3N_if": [
+      "Complete Himachal experience",
+      "Manali + Kasol both",
+      "More adventure activities",
+      "Deeper connections & memories"
+    ],
+    "choose_couples_batch_if": [
+      "Traveling with partner",
+      "Want romantic experiences",
+      "Prefer couple-friendly environment"
+    ],
+    "choose_gender_specific_if": [
+      "Want gender-specific bonding",
+      "Traveling solo, prefer same gender",
+      "Comfortable in segregated groups"
+    ],
+    "choose_mixed_group_if": [
+      "Solo traveler seeking diversity",
+      "Want maximum networking",
+      "Open to all types of travelers",
+      "Like vibrant group energy"
+    ]
+  },
+  "cta": {
+    "booking_number": "+91-9250294508",
+    "tagline": "Adventure awaits. Memories guaranteed. Friendships forever.",
+    "closing_line": "TRIPYWAY - Where Every Journey Becomes a Story",
+    "hashtags": [
+      "#Tripyway",
+      "#ManaliKasol",
+      "#ChristmasSpecial",
+      "#NYE2025",
+      "#CouplesTrip",
+      "#GirlsTrip",
+      "#BoysTrip",
+      "#GroupTravel",
+      "#HimalayanAdventure",
+      "#MountainMagic"
+    ],
+    "season_greeting": "Merry Christmas & Happy New Year",
+    "closing_note": "See You in the Mountains!"
+  }
+}
