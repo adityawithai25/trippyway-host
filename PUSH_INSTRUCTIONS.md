@@ -30,19 +30,25 @@ When prompted:
 - **Username**: `adityawithai25`
 - **Password**: Paste your Personal Access Token (NOT your GitHub password)
 
-## Alternative: Using Token in URL (One-time)
+## ⚠️ Security Note
 
-If you want to avoid prompts, you can use:
-
-```bash
-git push https://YOUR_TOKEN@github.com/adityawithai25/trippyway-host.git develop
-```
-
-Replace `YOUR_TOKEN` with your actual token.
+**NEVER commit your Personal Access Token to the repository!** If you accidentally commit a token:
+1. Remove it from the file immediately
+2. Revoke the token at: https://github.com/settings/tokens
+3. Create a new token
+4. Amend your commit: `git commit --amend --no-edit`
 
 ## Current Status
-✅ Branch `develop` created
-✅ All code committed
+✅ Branch `develop` created and pushed
+✅ Branch `main` created and pushed
+✅ All code committed and pushed
 ✅ Remote configured
-⏳ Waiting for authentication to push
+
+## Next Steps
+
+For future pushes, you can:
+1. Use the credential helper (already configured): `git push origin develop`
+2. Or use token in URL temporarily: `git push https://YOUR_TOKEN@github.com/adityawithai25/trippyway-host.git develop`
+
+**Important**: If you used a token in a command that was visible in terminal history, consider revoking it and creating a new one for security.
 
