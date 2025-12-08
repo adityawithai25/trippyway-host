@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "validate:images": "bun run scripts/validate-images.ts"
   },
   "dependencies": {
     "@calcom/embed-react": "^1.5.3",

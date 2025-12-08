@@ -1,7 +1,10 @@
 /**
  * Theme-Based Destination Data
  * Curated Indian destinations organized by target audience themes
+ * All images sourced from authentic-images.ts library
  */
+
+import { DESTINATION_IMAGES } from './authentic-images';
 
 export interface ThemeDestination {
   themeId: string;
@@ -32,7 +35,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Udaipur',
         cityCode: 'UDR',
-        image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80',
+        image: DESTINATION_IMAGES.udaipur.lake,
         highlights: [
           'Sunset boat rides on Lake Pichola',
           'Luxury heritage palace stays',
@@ -42,7 +45,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Goa',
         cityCode: 'GOI',
-        image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80',
+        image: DESTINATION_IMAGES.goa.beach,
         highlights: [
           'Private beach villas and resorts',
           'Scenic coastal sunsets',
@@ -52,7 +55,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Kashmir',
         cityCode: 'KAS',
-        image: 'https://images.unsplash.com/photo-1542042161784-26ab9e041e89?w=800&q=80',
+        image: DESTINATION_IMAGES.kashmir.houseboat,
         highlights: [
           'Houseboat stays on Dal Lake',
           'Shikara rides at golden hour',
@@ -62,7 +65,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Coorg',
         cityCode: 'CRG',
-        image: 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&q=80',
+        image: DESTINATION_IMAGES.coorg.plantation,
         highlights: [
           'Coffee plantation homestays',
           'Misty hill station romance',
@@ -72,7 +75,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Andaman',
         cityCode: 'IXZ',
-        image: 'https://images.unsplash.com/photo-1559628376-f3fe5f782a2e?w=800&q=80',
+        image: DESTINATION_IMAGES.andaman.beach,
         highlights: [
           'Secluded beaches and crystal waters',
           'Scuba diving adventures',
@@ -93,7 +96,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Jaisalmer',
         cityCode: 'JSA',
-        image: 'https://images.unsplash.com/photo-1477587458883-47145ed94245?w=800&q=80',
+        image: DESTINATION_IMAGES.jaisalmer.fort,
         highlights: [
           'Golden hour desert photography',
           'Architectural heritage frames',
@@ -103,7 +106,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Hampi',
         cityCode: 'HMP',
-        image: 'https://images.unsplash.com/photo-1609920658906-8223bd289001?w=800&q=80',
+        image: DESTINATION_IMAGES.hampi.boulders,
         highlights: [
           'Ancient boulder landscapes',
           'Sunrise temple silhouettes',
@@ -113,7 +116,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Rishikesh',
         cityCode: 'RSG',
-        image: 'https://images.unsplash.com/photo-1591825729269-caeb344f6df2?w=800&q=80',
+        image: DESTINATION_IMAGES.rishikesh.ganga,
         highlights: [
           'Ganges river ghat photography',
           'Suspension bridge perspectives',
@@ -123,7 +126,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Varanasi',
         cityCode: 'VNS',
-        image: 'https://images.unsplash.com/photo-1561361513-2d000a50f0dc?w=800&q=80',
+        image: DESTINATION_IMAGES.varanasi.ghats,
         highlights: [
           'Spiritual morning ghat rituals',
           'Ancient lanes and architecture',
@@ -133,7 +136,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Ladakh',
         cityCode: 'LAD',
-        image: 'https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=800&q=80',
+        image: DESTINATION_IMAGES.ladakh.pangong,
         highlights: [
           'Pangong Lake color palette',
           'High-altitude mountain scapes',
@@ -154,7 +157,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Lonavala',
         cityCode: 'LNL',
-        image: 'https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=800&q=80',
+        image: DESTINATION_IMAGES.lonavala.hills,
         highlights: [
           'Hill station conference facilities',
           'Team building activities',
@@ -164,7 +167,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Coorg',
         cityCode: 'CRG',
-        image: 'https://images.unsplash.com/photo-1605640840605-14ac1855827b?w=800&q=80',
+        image: DESTINATION_IMAGES.coorg.plantation,
         highlights: [
           'Plantation resort venues',
           'Nature-based team exercises',
@@ -174,7 +177,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Pondicherry',
         cityCode: 'PNY',
-        image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80',
+        image: DESTINATION_IMAGES.pondicherry.main,
         highlights: [
           'Coastal retreat ambiance',
           'French Quarter for networking',
@@ -184,7 +187,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Goa',
         cityCode: 'GOI',
-        image: 'https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?w=800&q=80',
+        image: DESTINATION_IMAGES.goa.beach,
         highlights: [
           'Beach resort conference centers',
           'Team bonding activities',
@@ -194,7 +197,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Shimla',
         cityCode: 'SLV',
-        image: 'https://images.unsplash.com/photo-1626597627004-cd4eee8d4c7c?w=800&q=80',
+        image: DESTINATION_IMAGES.shimla.main,
         highlights: [
           'Colonial-era conference venues',
           'Mountain retreat setting',
@@ -215,7 +218,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Delhi',
         cityCode: 'DEL',
-        image: 'https://images.unsplash.com/photo-1587474260584-136574528ed5?w=800&q=80',
+        image: DESTINATION_IMAGES.delhi.heritage,
         highlights: [
           'National School of Drama',
           'Kamani Auditorium performances',
@@ -225,7 +228,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Mumbai',
         cityCode: 'BOM',
-        image: 'https://images.unsplash.com/photo-1567157577867-05ccb1388e66?w=800&q=80',
+        image: DESTINATION_IMAGES.mumbai.skyline,
         highlights: [
           'Prithvi Theatre legacy',
           'NCPA cultural center',
@@ -235,7 +238,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Chennai',
         cityCode: 'MAA',
-        image: 'https://images.unsplash.com/photo-1582510003544-4d00b7f74220?w=800&q=80',
+        image: DESTINATION_IMAGES.chennai.temple,
         highlights: [
           'Kalakshetra Foundation',
           'Music Academy concerts',
@@ -245,7 +248,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Kolkata',
         cityCode: 'CCU',
-        image: 'https://images.unsplash.com/photo-1558431382-27e303142255?w=800&q=80',
+        image: DESTINATION_IMAGES.kolkata.culture,
         highlights: [
           'Academy of Fine Arts',
           'Rabindra Sadan theater',
@@ -255,7 +258,7 @@ export const THEME_DESTINATIONS: ThemeDestination[] = [
       {
         name: 'Jaipur',
         cityCode: 'JAI',
-        image: 'https://images.unsplash.com/photo-1599661046289-e31897846e41?w=800&q=80',
+        image: DESTINATION_IMAGES.jaipur.heritage,
         highlights: [
           'Jaipur Literature Festival',
           'Rajasthani folk performances',

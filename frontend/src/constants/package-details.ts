@@ -21,6 +21,7 @@ import {
   Ban,
 } from "lucide-react";
 import { Trip } from "./trip-data";
+import { ACTIVITY_IMAGES } from "./authentic-images";
 
 // Icon mapping for activity types
 export const activityIconMap: Record<string, React.ElementType> = {
@@ -88,11 +89,9 @@ export const getFeatureIcon = (
 export const detailedItineraries: Record<string, any> = {
   "wt-del-001": {
     images: [
-      "https://images.unsplash.com/photo-1626621341517-bbf3d9990a23?w=1200&q=80",
-      "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=1200&q=80",
-      "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1200&q=80",
-      "https://images.unsplash.com/photo-1501594907352-04cda38ebc29?w=1200&q=80",
-      "https://images.unsplash.com/photo-1504280390367-361c6d9f38f4?w=1200&q=80",
+      ...ACTIVITY_IMAGES.trekking,
+      ...ACTIVITY_IMAGES.rafting,
+      ...ACTIVITY_IMAGES.camping,
     ],
     description:
       "Experience the adventure capital of India with river rafting, camping under the stars, and exploring the serene beauty of Rishikesh. This weekend getaway is perfect for those seeking thrill and spiritual connection.",
