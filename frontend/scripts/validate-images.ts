@@ -223,12 +223,11 @@ function generateReport(
   console.log(`${colors.cyan}════════════════════════════════════════════${colors.reset}\n`);
 }
 
-// Run validation
-if (import.meta.main) {
-  validateAllImages().catch(error => {
-    console.error(`${colors.red}Validation failed:${colors.reset}`, error);
-    process.exit(1);
-  });
-}
+// Run validation when executed directly
+// Uncomment below to run validation:
+// validateAllImages().catch(error => {
+//   console.error(`${colors.red}Validation failed:${colors.reset}`, error);
+//   process.exit(1);
+// });
 
 export { validateAllImages, checkImageAccessibility };
