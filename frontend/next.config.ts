@@ -4,9 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   reactCompiler: true,
   cacheComponents: true, // Enable use cache directive
-  turbopack: {
-    root: __dirname,
-  },
+  outputFileTracingRoot: require("path").join(__dirname, "../"),
   images: {
     remotePatterns: [
       {
