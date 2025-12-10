@@ -239,7 +239,7 @@ export function BookingSidebar({
           </h3>
           <div className="space-y-2.5">
             <a
-              href={`tel:${whatsappNumber}`}
+              href={`tel:+91${whatsappNumber.replace(/\D/g, '')}`}
               className="flex items-center gap-2.5 p-2 sm:p-2.5 rounded-lg hover:bg-muted transition-colors duration-[250ms]"
             >
               <div className="w-9 h-9 rounded-full bg-emerald-100 flex items-center justify-center">

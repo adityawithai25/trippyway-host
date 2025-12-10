@@ -813,7 +813,7 @@ export default function HelpCentrePage() {
 
               {/* Phone */}
               <a
-                href={`tel:${whatsappNumber}`}
+                href={`tel:+91${whatsappNumber.replace(/\D/g, '')}`}
                 className="p-6 rounded-xl border-2 border-border hover:border-primary hover:bg-primary/5 transition-all text-left group"
               >
                 <Phone className="w-8 h-8 text-primary mb-3 group-hover:scale-110 transition-transform" />
