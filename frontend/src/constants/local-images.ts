@@ -188,7 +188,7 @@ export const LOCAL_PACKAGE_IMAGES = {
 /**
  * Get all images for a specific destination
  */
-export function getLocalDestinationImages(destination: string): string[] {
+export function getLocalDestinationImages(destination: string): readonly string[] {
   const dest = destination.toLowerCase();
   
   if (dest.includes('manali')) {
@@ -214,7 +214,7 @@ export function getLocalDestinationImages(destination: string): string[] {
 /**
  * Get images based on category
  */
-export function getLocalCategoryImages(category: string): string[] {
+export function getLocalCategoryImages(category: string): readonly string[] {
   const cat = category.toLowerCase();
   
   if (cat.includes('couple')) {
@@ -278,7 +278,7 @@ export function getLocalMainImage(destination: string, category: string): string
 /**
  * Get diverse images for package gallery (5 images)
  */
-export function getPackageGalleryImages(destination: string, category: string): string[] {
+export function getPackageGalleryImages(destination: string, category: string): readonly string[] {
   const mainImage = getLocalMainImage(destination, category);
   const categoryImages = getLocalCategoryImages(category);
   const destImages = getLocalDestinationImages(destination);
@@ -294,7 +294,7 @@ export function getPackageGalleryImages(destination: string, category: string): 
 /**
  * Get images for itinerary days
  */
-export function getItineraryDayImages(destination: string, dayNumber: number): string[] {
+export function getItineraryDayImages(destination: string, dayNumber: number): readonly string[] {
   const dest = destination.toLowerCase();
   
   if (dest.includes('manali')) {
