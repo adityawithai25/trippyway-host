@@ -33,10 +33,36 @@ export function DateRangePicker({
     from: startDate || undefined,
     to: endDate || undefined,
   });
+  const [isOpen, setIsOpen] = React.useState(false);
+  const [isMobile, setIsMobile] = React.useState(false);
+
+  // Detect mobile viewport
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Sync with external date changes
+  React.useEffect(() => {
+    setDate({
+      from: startDate || undefined,
+      to: endDate || undefined,
+    });
+  }, [startDate, endDate]);
 
   const handleSelect = (range: DateRange | undefined) => {
     setDate(range);
     onDateChange(range?.from || null, range?.to || null);
+    
+    // Auto-close when both dates are selected (like hero section)
+    if (range?.from && range?.to && range.to !== range.from) {
+      setTimeout(() => setIsOpen(false), 300);
+    }
   };
 
   const handleClear = (e: React.MouseEvent) => {
@@ -49,7 +75,7 @@ export function DateRangePicker({
 
   return (
     <div className={cn("grid gap-2", className)}>
-      <Popover>
+      <Popover open={isOpen} onOpenChange={setIsOpen}>
         <PopoverTrigger asChild>
           <Button
             id="date"
@@ -86,7 +112,7 @@ export function DateRangePicker({
             defaultMonth={date?.from}
             selected={date}
             onSelect={handleSelect}
-            numberOfMonths={2}
+            numberOfMonths={isMobile ? 1 : 2}
             disabled={(date) => date < new Date(new Date().setHours(0, 0, 0, 0))}
           />
         </PopoverContent>
@@ -111,16 +137,30 @@ export function CompactDateRangePicker({
     from: startDate || undefined,
     to: endDate || undefined,
   });
+  const [isOpen, setIsOpen] = React.useState(false);
+
+  // Sync with external date changes
+  React.useEffect(() => {
+    setDate({
+      from: startDate || undefined,
+      to: endDate || undefined,
+    });
+  }, [startDate, endDate]);
 
   const handleSelect = (range: DateRange | undefined) => {
     setDate(range);
     onDateChange(range?.from || null, range?.to || null);
+    
+    // Auto-close when both dates are selected (like hero section)
+    if (range?.from && range?.to && range.to !== range.from) {
+      setTimeout(() => setIsOpen(false), 300);
+    }
   };
 
   const hasDate = date?.from || date?.to;
 
   return (
-    <Popover>
+    <Popover open={isOpen} onOpenChange={setIsOpen}>
       <PopoverTrigger asChild>
         <Button
           variant="outline"

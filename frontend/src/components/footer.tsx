@@ -111,14 +111,18 @@ export default function Footer() {
               <h4 className="font-semibold mb-3 text-sm">Follow Us</h4>
               <div className="flex gap-3">
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/thetrippywayofficial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   aria-label="Facebook"
                 >
                   <Facebook className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/thetrippywayofficial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   aria-label="Twitter"
                 >
@@ -134,7 +138,9 @@ export default function Footer() {
                   <Instagram className="w-5 h-5" />
                 </Link>
                 <Link
-                  href="#"
+                  href="https://www.instagram.com/thetrippywayofficial/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="text-muted-foreground hover:text-primary transition-colors"
                   aria-label="YouTube"
                 >

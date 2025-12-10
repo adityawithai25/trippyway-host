@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Trip } from "@/constants/trip-data";
 import Image from "next/image";
 import { Calendar, Clock, MapPin } from "lucide-react";
@@ -42,6 +42,24 @@ export default function PackageDetailClient({
 }: PackageDetailClientProps) {
   const [isLiked, setIsLiked] = useState(false);
   const [showSuccessModal, setShowSuccessModal] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const galleryRef = useRef<HTMLDivElement>(null);
+
+  // Track scroll position to update active image indicator
+  useEffect(() => {
+    const gallery = galleryRef.current;
+    if (!gallery) return;
+
+    const handleScroll = () => {
+      const scrollLeft = gallery.scrollLeft;
+      const itemWidth = gallery.offsetWidth;
+      const index = Math.round(scrollLeft / itemWidth);
+      setCurrentImageIndex(index);
+    };
+
+    gallery.addEventListener("scroll", handleScroll);
+    return () => gallery.removeEventListener("scroll", handleScroll);
+  }, []);
 
   const handleWhatsAppConnect = () => {
     const planDetails = `
@@ -85,9 +103,62 @@ I'm interested in booking this package. Please share more details and availabili
       {/* Image Gallery Grid */}
       <div className="container mx-auto px-4 md:px-6 mb-6">
         <div className="relative rounded-2xl overflow-hidden shadow-lg border border-border/50">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-1.5 h-[300px] md:h-[380px]">
+          {/* Mobile: Horizontal Scrollable Gallery */}
+          <div className="md:hidden">
+            <div
+              ref={galleryRef}
+              className="flex overflow-x-auto snap-x snap-mandatory scrollbar-hide scroll-smooth h-[300px]"
+            >
+              {details.images.map((image: string, index: number) => (
+                <div
+                  key={index}
+                  className="relative min-w-full snap-center snap-always flex-shrink-0"
+                >
+                  <Image
+                    src={image}
+                    alt={`${trip.location} - Image ${index + 1}`}
+                    fill
+                    className="object-cover"
+                    priority={index === 0}
+                  />
+                </div>
+              ))}
+            </div>
+            
+            {/* Image counter for mobile */}
+            <div className="absolute top-3 right-3 z-10 bg-black/70 backdrop-blur-md text-white px-2.5 py-1 rounded-lg text-xs font-semibold shadow-lg border border-white/10">
+              {currentImageIndex + 1}/{details.images.length}
+            </div>
+
+            {/* Scroll indicator dots for mobile */}
+            <div className="absolute bottom-3 left-1/2 -translate-x-1/2 z-10 flex gap-1.5 bg-black/30 backdrop-blur-md px-3 py-1.5 rounded-full">
+              {details.images.map((_, index: number) => (
+                <button
+                  key={index}
+                  onClick={() => {
+                    const gallery = galleryRef.current;
+                    if (gallery) {
+                      gallery.scrollTo({
+                        left: index * gallery.offsetWidth,
+                        behavior: "smooth",
+                      });
+                    }
+                  }}
+                  className={`transition-all duration-300 rounded-full ${
+                    index === currentImageIndex
+                      ? "w-6 h-2 bg-white shadow-lg"
+                      : "w-2 h-2 bg-white/60 hover:bg-white/90"
+                  }`}
+                  aria-label={`Go to image ${index + 1}`}
+                />
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop: Grid Layout */}
+          <div className="hidden md:grid grid-cols-4 gap-1.5 h-[380px]">
             {/* Large main image */}
-            <button className="col-span-1 md:col-span-2 row-span-2 relative overflow-hidden group">
+            <button className="col-span-2 row-span-2 relative overflow-hidden group">
               <Image
                 src={details.images[0]}
                 alt={`${trip.location} - Main view`}
