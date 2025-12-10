@@ -322,7 +322,7 @@ export function getCategoryImage(category: keyof typeof CATEGORY_IMAGES, index: 
 /**
  * Get activity-specific images
  */
-export function getActivityImages(activity: keyof typeof ACTIVITY_IMAGES): string[] {
+export function getActivityImages(activity: keyof typeof ACTIVITY_IMAGES): readonly string[] {
   return ACTIVITY_IMAGES[activity];
 }
 
