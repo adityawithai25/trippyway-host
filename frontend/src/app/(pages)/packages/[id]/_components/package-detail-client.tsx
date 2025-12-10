@@ -50,7 +50,6 @@ export default function PackageDetailClient({
 • *Location:* ${trip.location}
 • *Duration:* ${trip.duration}
 • *Dates:* ${trip.startDate} - ${trip.endDate}
-• *Price:* ₹${trip.price.toLocaleString("en-IN")} per person
 • *Category:* ${trip.category}
 • *Package Type:* ${trip.packageType}
 • *Spots Available:* ${trip.spotsLeft} out of ${trip.totalSpots}

@@ -36,7 +36,9 @@ const HeroSection = () => {
   const [searchResults, setSearchResults] = useState<SearchResult[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [selectedIndex, setSelectedIndex] = useState(-1);
+  const [isMobile, setIsMobile] = useState(false);
   const resultsRef = useRef<(HTMLButtonElement | null)[]>([]);
+  const destinationInputRef = useRef<HTMLInputElement>(null);
   
   // Scroll selected item into view
   useEffect(() => {
@@ -149,6 +151,14 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
+  // Mobile detection for responsive calendar
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   // Handle search submit
   const handleSearch = () => {
     if (!destination.trim()) {
@@ -180,10 +190,23 @@ const HeroSection = () => {
     );
   };
 
-  // Format date for display
-  const formatDate = (date: Date | null) => {
+  // Professional date formatting with weekday
+  const formatDatePro = (date: Date | null) => {
     if (!date) return null;
-    return date.toLocaleDateString("en-US", { month: "short", day: "numeric" });
+    return date.toLocaleDateString("en-US", { 
+      weekday: "short", 
+      month: "short", 
+      day: "numeric" 
+    });
+  };
+
+  // Calculate trip duration in nights
+  const getTripDuration = () => {
+    if (startDate && endDate) {
+      const nights = Math.ceil((endDate.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24));
+      return nights === 1 ? "1 night" : `${nights} nights`;
+    }
+    return null;
   };
 
   return (
@@ -250,31 +273,35 @@ const HeroSection = () => {
           </p>
 
           {/* Hero Search Bar */}
-          <div className="max-w-4xl mx-auto pt-4">
-            <div className="w-full rounded-2xl bg-white/12 border border-white/20 shadow-[0_15px_60px_rgba(0,0,0,0.35)] backdrop-blur-2xl focus-within:ring-2 focus-within:ring-emerald-400/50 transition-all duration-[250ms]">
-              <div className="flex flex-col md:flex-row items-stretch divide-y divide-white/10 md:divide-y-0 md:divide-x">
+          <div className="max-w-5xl mx-auto pt-6">
+            <div className="w-full rounded-2xl bg-white/10 border border-white/20 shadow-[0_20px_70px_rgba(0,0,0,0.4)] backdrop-blur-3xl overflow-hidden">
+              <div className="flex flex-col md:flex-row items-stretch divide-y divide-white/10 md:divide-y-0 md:divide-x md:divide-white/10">
                 {/* Destination Input - Enhanced with professional search */}
-                <div className="flex-1">
+                <div className="flex-1 min-w-0">
                   <Popover
                     open={showDestinations}
                     onOpenChange={setShowDestinations}
                   >
                     <PopoverTrigger asChild>
-                      <div className="h-full px-6 py-4 cursor-text hover:bg-white/15 rounded-l-2xl transition-all duration-[250ms] flex items-center gap-4">
-                        <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center text-white">
-                          <MapPin className="w-5 h-5" />
+                      <div 
+                        onClick={() => destinationInputRef.current?.focus()}
+                        className="h-full px-5 sm:px-6 py-4 sm:py-5 cursor-text hover:bg-white/8 transition-all duration-200 flex items-center gap-4 min-h-[80px] sm:min-h-[88px]"
+                      >
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0 group-hover:bg-white/15 transition-colors">
+                          <MapPin className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <div className="text-left flex-1">
-                          <p className="text-[11px] font-semibold uppercase tracking-widest text-white/70 mb-1">
+                        <div className="text-left flex-1 min-w-0">
+                          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white/60 mb-1.5">
                             Where to
                           </p>
                           <input
+                            ref={destinationInputRef}
                             type="text"
                             value={destination}
                             onChange={(e) => handleDestinationChange(e.target.value)}
                             onKeyDown={handleKeyDown}
                             placeholder="Goa, Manali, Delhi..."
-                            className="w-full text-sm font-medium text-white placeholder:text-white/50 bg-transparent border-none outline-none focus:ring-0 p-0"
+                            className="w-full text-base sm:text-lg font-semibold text-white placeholder:text-white/40 bg-transparent border-none outline-none focus:ring-0 p-0 leading-tight"
                             onFocus={() => setShowDestinations(true)}
                             autoComplete="off"
                           />
@@ -286,9 +313,9 @@ const HeroSection = () => {
                               setDestination("");
                               setSearchResults([]);
                             }}
-                            className="text-white/50 hover:text-white transition-colors"
+                            className="text-white/50 hover:text-white transition-colors flex-shrink-0"
                           >
-                            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                             </svg>
                           </button>
@@ -449,101 +476,158 @@ const HeroSection = () => {
                   </Popover>
                 </div>
 
-                {/* Date Range Input */}
-                <div className="flex-1">
+                {/* Travel Dates - Single Professional Field */}
+                <div className="flex-1 min-w-0">
                   <Popover
                     open={showDatePicker}
                     onOpenChange={setShowDatePicker}
                   >
                     <PopoverTrigger asChild>
-                      <div className="h-full px-6 py-4 cursor-pointer hover:bg-white/15 transition-all duration-[250ms] flex items-center gap-4">
-                        <div className="w-11 h-11 rounded-xl bg-white/15 border border-white/25 flex items-center justify-center text-white">
-                          <CalendarIcon className="w-5 h-5" />
+                      <div className="h-full px-5 sm:px-6 py-4 sm:py-5 cursor-pointer hover:bg-white/8 transition-all duration-200 flex items-center gap-4 min-h-[80px] sm:min-h-[88px]">
+                        <div className="w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white/10 flex items-center justify-center text-white flex-shrink-0">
+                          <CalendarIcon className="w-5 h-5 sm:w-6 sm:h-6" />
                         </div>
-                        <div className="text-left flex-1">
-                          <p className="text-[11px] font-semibold uppercase tracking-widest text-white/70">
+                        <div className="text-left flex-1 min-w-0">
+                          <p className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-white/60 mb-1.5">
                             Travel dates
                           </p>
-                          <p className="text-sm font-medium text-white">
+                          <p className="text-base sm:text-lg font-semibold text-white truncate leading-tight">
                             {startDate && endDate
-                              ? `${formatDate(startDate)} – ${formatDate(
-                                  endDate
-                                )}`
-                              : "Add dates"}
+                              ? `${formatDatePro(startDate)} → ${formatDatePro(endDate)}`
+                              : startDate
+                              ? `${formatDatePro(startDate)} → Select end`
+                              : "Select dates"}
                           </p>
+                          {getTripDuration() && (
+                            <p className="text-xs text-white/50 mt-1 font-medium">
+                              {getTripDuration()}
+                            </p>
+                          )}
                         </div>
                       </div>
                     </PopoverTrigger>
-                    <PopoverContent className="w-auto p-4" align="center">
-                      <div className="space-y-4">
+                    <PopoverContent className="w-auto p-0 max-w-[95vw]" align="center" sideOffset={8}>
+                      <div className="p-4 space-y-4">
+                        {/* Header with duration */}
                         <div>
-                          <p className="text-sm font-semibold text-gray-700 mb-2">
-                            Select Travel Dates
-                          </p>
-                          <Calendar
-                            mode="range"
-                            selected={{
-                              from: startDate || undefined,
-                              to: endDate || undefined,
-                            }}
-                            onSelect={(range) => {
-                              if (range?.from) {
-                                setStartDate(range.from);
-                                setEndDate(range.to || range.from);
+                          <h3 className="font-semibold text-lg mb-1">Select your travel dates</h3>
+                          {getTripDuration() && (
+                            <p className="text-sm text-muted-foreground flex items-center gap-2">
+                              <span className="inline-flex items-center justify-center w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold">
+                                {getTripDuration()?.split(' ')[0]}
+                              </span>
+                              <span className="font-medium">{getTripDuration()}</span>
+                            </p>
+                          )}
+                        </div>
+
+                        {/* Calendar */}
+                        <Calendar
+                          mode="range"
+                          selected={{
+                            from: startDate || undefined,
+                            to: endDate || undefined,
+                          }}
+                          onSelect={(range) => {
+                            if (range?.from) {
+                              setStartDate(range.from);
+                              setEndDate(range.to || range.from);
+                              // Auto-close when both dates are selected
+                              if (range.to && range.to !== range.from) {
+                                setTimeout(() => setShowDatePicker(false), 300);
                               }
-                            }}
-                            numberOfMonths={2}
-                            disabled={(date) =>
-                              date < new Date(new Date().setHours(0, 0, 0, 0))
                             }
-                          />
+                          }}
+                          numberOfMonths={isMobile ? 1 : 2}
+                          disabled={(date) =>
+                            date < new Date(new Date().setHours(0, 0, 0, 0))
+                          }
+                        />
+
+                        {/* Quick Duration Presets */}
+                        <div className="pt-3 border-t">
+                          <p className="text-xs font-semibold text-muted-foreground mb-2.5 uppercase tracking-wide">
+                            Popular durations
+                          </p>
+                          <div className="grid grid-cols-2 gap-2">
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => {
+                                const today = new Date();
+                                setStartDate(addDays(today, 7));
+                                setEndDate(addDays(today, 9));
+                                setTimeout(() => setShowDatePicker(false), 300);
+                              }}
+                              className="h-9 text-xs font-medium hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300"
+                            >
+                              Weekend (2N)
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => {
+                                const today = new Date();
+                                setStartDate(addDays(today, 7));
+                                setEndDate(addDays(today, 14));
+                                setTimeout(() => setShowDatePicker(false), 300);
+                              }}
+                              className="h-9 text-xs font-medium hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300"
+                            >
+                              Week (7N)
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => {
+                                const today = new Date();
+                                setStartDate(addDays(today, 7));
+                                setEndDate(addDays(today, 21));
+                                setTimeout(() => setShowDatePicker(false), 300);
+                              }}
+                              className="h-9 text-xs font-medium hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300"
+                            >
+                              2 Weeks (14N)
+                            </Button>
+                            <Button
+                              size="sm"
+                              variant="outline"
+                              onClick={() => {
+                                const today = new Date();
+                                setStartDate(addDays(today, 7));
+                                setEndDate(addDays(today, 37));
+                                setTimeout(() => setShowDatePicker(false), 300);
+                              }}
+                              className="h-9 text-xs font-medium hover:bg-emerald-50 hover:text-emerald-700 hover:border-emerald-300"
+                            >
+                              Month (30N)
+                            </Button>
+                          </div>
                         </div>
-                        <div className="flex gap-2 pt-2">
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => {
-                              const today = new Date();
-                              setStartDate(addDays(today, 7));
-                              setEndDate(addDays(today, 10));
-                            }}
-                            className="flex-1"
-                          >
-                            3 Days
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => {
-                              const today = new Date();
-                              setStartDate(addDays(today, 7));
-                              setEndDate(addDays(today, 12));
-                            }}
-                            className="flex-1"
-                          >
-                            5 Days
-                          </Button>
-                          <Button
-                            size="sm"
-                            variant="outline"
-                            onClick={() => {
-                              const today = new Date();
-                              setStartDate(addDays(today, 7));
-                              setEndDate(addDays(today, 14));
-                            }}
-                            className="flex-1"
-                          >
-                            7 Days
-                          </Button>
-                        </div>
+
+                        {/* Clear Button */}
+                        {(startDate || endDate) && (
+                          <div className="pt-3 border-t">
+                            <Button
+                              variant="outline"
+                              onClick={() => {
+                                setStartDate(null);
+                                setEndDate(null);
+                              }}
+                              className="w-full hover:bg-red-50 hover:text-red-600 hover:border-red-300"
+                            >
+                              Clear dates
+                            </Button>
+                          </div>
+                        )}
                       </div>
                     </PopoverContent>
                   </Popover>
                 </div>
 
                 {/* Travelers Input */}
-                <div className="flex-1">
-                  <div className="h-full px-6 py-4 hover:bg-white/15 transition-all duration-[250ms] flex items-center">
+                <div className="flex-1 min-w-0">
+                  <div className="h-full px-5 sm:px-6 py-4 sm:py-5 hover:bg-white/8 transition-all duration-200 flex items-center min-h-[80px] sm:min-h-[88px]">
                     <TravelerSlider
                       value={travelers}
                       onChange={setTravelers}
@@ -553,15 +637,17 @@ const HeroSection = () => {
                   </div>
                 </div>
 
-                <div className="md:w-auto">
-                  <div className="h-full px-5 py-3 flex items-center justify-center">
+                {/* Search Button */}
+                <div className="md:w-auto md:flex-shrink-0">
+                  <div className="h-full px-5 sm:px-6 py-4 sm:py-5 flex items-center justify-center">
                     <Button
                       size="lg"
                       onClick={handleSearch}
-                      className="w-full md:w-auto bg-white text-gray-900 hover:bg-white/90 rounded-full px-6 py-5 text-sm font-semibold  flex items-center gap-2"
+                      className="w-full md:w-auto bg-white text-gray-900 hover:bg-gray-50 active:scale-95 rounded-xl md:rounded-full px-8 py-6 text-base font-bold flex items-center justify-center gap-2.5 shadow-lg hover:shadow-xl transition-all duration-200 min-h-[60px]"
                     >
                       <Search className="w-5 h-5" />
-                      Start planning
+                      <span className="hidden sm:inline">Search</span>
+                      <span className="sm:hidden">Search</span>
                     </Button>
                   </div>
                 </div>

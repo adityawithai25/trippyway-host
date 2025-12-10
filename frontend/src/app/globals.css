@@ -349,3 +349,9 @@ body {
     display: none; /* Chrome, Safari and Opera */
   }
 }
+
+/* Custom animation for phone wiggle */
+@keyframes wiggle {
+  0%, 100% { transform: rotate(-3deg); }
+  50% { transform: rotate(3deg); }
+}

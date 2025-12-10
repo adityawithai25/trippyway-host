@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Trip } from "@/constants/trip-data";
 import { useRouter } from "next/navigation";
+import { cn } from "@/lib/utils";
 
 interface BookingSidebarProps {
   trip: Trip;
@@ -145,11 +146,11 @@ export function BookingSidebar({
 
           <Separator />
 
-          <div className="space-y-2.5">
+          <div className="space-y-3">
             <Button
               onClick={handleBookNow}
               disabled={trip.spotsLeft === 0 || isBooking}
-              className="w-full h-10 sm:h-11 text-sm md:text-base font-semibold rounded-lg bg-emerald-800 hover:bg-emerald-900 text-white relative overflow-hidden shadow-md active:scale-95 transition-all duration-[250ms]"
+              className="w-full h-11 sm:h-12 text-sm md:text-base font-bold rounded-xl bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 text-white relative overflow-hidden shadow-lg hover:shadow-xl active:scale-95 transition-all duration-300"
               size="lg"
             >
               {isBooking ? (
@@ -170,23 +171,62 @@ export function BookingSidebar({
                   Sign Up to Book
                 </>
               )}
+              {/* Shine effect */}
+              <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
             </Button>
 
+            {/* Personalized Planning Consultant Button */}
+            <div className="relative">
+              <Button
+                onClick={handleWhatsAppConnect}
+                variant="outline"
+                className={cn(
+                  "w-full h-11 sm:h-12 text-sm md:text-base font-bold rounded-xl border-2 border-emerald-500 text-emerald-700 relative overflow-hidden group transition-all duration-300",
+                  "hover:bg-gradient-to-r hover:from-emerald-50 hover:to-teal-50 hover:shadow-lg active:scale-95",
+                  isWhatsAppAnimating && "ring-4 ring-emerald-200 bg-emerald-50"
+                )}
+                size="lg"
+              >
+                {/* Animated background pulse */}
+                <span className="absolute inset-0 bg-gradient-to-r from-emerald-400/20 to-teal-400/20 animate-pulse opacity-0 group-hover:opacity-100 transition-opacity duration-500"></span>
+                
+                {/* Content */}
+                <span className="relative z-10 flex items-center justify-center gap-2">
+                  <Phone className="w-5 h-5 animate-[wiggle_1s_ease-in-out_infinite]" />
+                  <span className="flex flex-col items-start leading-tight">
+                    <span className="text-xs font-semibold text-emerald-600">Free Consultation</span>
+                    <span className="text-sm font-bold">Personalize Planning</span>
+                  </span>
+                </span>
+                
+                {/* Pulsing indicator */}
+                <span className="absolute top-2 right-2 flex h-3 w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-3 w-3 bg-emerald-500"></span>
+                </span>
+              </Button>
+            </div>
+
+            {/* WhatsApp Quick Connect */}
             <Button
               onClick={handleWhatsAppConnect}
-              variant="outline"
-              className={`w-full h-10 sm:h-11 text-sm md:text-base font-semibold rounded-lg border-2 hover:bg-emerald-50 hover:border-emerald-500 hover:text-emerald-700 active:scale-95 transition-all duration-[250ms] relative overflow-hidden ${
-                isWhatsAppAnimating ? "ring-2 ring-emerald-300" : ""
-              }`}
-              size="lg"
+              variant="ghost"
+              className="w-full h-10 text-sm font-semibold rounded-lg hover:bg-emerald-50 hover:text-emerald-700 transition-all duration-200 group"
+              size="sm"
             >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Connect on WhatsApp
+              <MessageCircle className="w-4 h-4 mr-2 group-hover:scale-110 transition-transform duration-200" />
+              or Chat on WhatsApp
             </Button>
 
-            <p className="text-xs text-center text-muted-foreground">
-              Have questions? Our travel experts are available 24/7
-            </p>
+            <div className="bg-gradient-to-r from-emerald-50 to-teal-50 border border-emerald-100 rounded-lg p-3 mt-3">
+              <p className="text-xs text-center text-emerald-800 font-medium flex items-center justify-center gap-1">
+                <span className="relative flex h-2 w-2">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500"></span>
+                </span>
+                Travel experts available 24/7 • Free advice
+              </p>
+            </div>
           </div>
         </CardContent>
       </Card>
