@@ -24,7 +24,10 @@ import {
 
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [taglineIndex, setTaglineIndex] = useState(0);
   const router = useRouter();
+
+  const taglines = ["Move with Purpose", "Redefining Travel Planning"];
 
   // Search bar state
   const [destination, setDestination] = useState("");
@@ -143,13 +146,22 @@ const HeroSection = () => {
   };
 
   useEffect(() => {
-    // Auto-change background every 10 seconds
+    // Auto-change background every 8 seconds
     const interval = setInterval(() => {
       setCurrentIndex((prevIndex) => (prevIndex + 1) % HERO_BACKGROUNDS.length);
     }, 8000);
 
     return () => clearInterval(interval);
   }, []);
+
+  useEffect(() => {
+    // Auto-change tagline every 5 seconds (slower animation)
+    const taglineInterval = setInterval(() => {
+      setTaglineIndex((prevIndex) => (prevIndex + 1) % taglines.length);
+    }, 5000);
+
+    return () => clearInterval(taglineInterval);
+  }, [taglines.length]);
 
   // Mobile detection for responsive calendar
   useEffect(() => {
@@ -248,13 +260,24 @@ const HeroSection = () => {
             </div>
           </div>
 
-          {/* Overline - Small tagline */}
-          <div className="flex items-center justify-center gap-2 max-sm:hidden">
-            <div className="h-px w-12 bg-white"></div>
-            <span className="text-sm  md:text-base font-semibold tracking-widest uppercase text-white ">
-              Redefining Travel Planning
-            </span>
-            <div className="h-px w-12 bg-white"></div>
+          {/* Overline - Small tagline with alternating text */}
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2">
+            <div className="h-px w-6 sm:w-12 bg-white"></div>
+            <div className="relative h-8 flex items-center justify-center min-w-[200px] sm:min-w-[280px] md:min-w-[360px]">
+              {taglines.map((tagline, index) => (
+                <span
+                  key={index}
+                  className={`absolute text-[10px] sm:text-sm md:text-base font-semibold tracking-wide sm:tracking-widest uppercase text-white whitespace-nowrap transition-all duration-1000 ease-in-out ${
+                    index === taglineIndex
+                      ? "opacity-100 translate-y-0"
+                      : "opacity-0 translate-y-2"
+                  }`}
+                >
+                  {tagline}
+                </span>
+              ))}
+            </div>
+            <div className="h-px w-6 sm:w-12 bg-white"></div>
           </div>
 
           <h1 className="text-4xl font-sans md:text-5xl lg:text-6xl text-balance font-bold sm:leading-[1.1] leading-tight text-white ">
@@ -268,8 +291,8 @@ const HeroSection = () => {
           </h1>
 
           <p className="text-md md:text-xl text-white/90 leading-relaxed max-w-2xl mx-auto font-inter">
-            Experience the future of travel with AI that understands your dreams
-            and designs perfect itineraries in seconds.
+            Travel shaped by your purpose, preferences, and mood - not our pitches. 
+            AI-powered itineraries that are uniquely yours, designed in seconds.
           </p>
 
           {/* Hero Search Bar */}

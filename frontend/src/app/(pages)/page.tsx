@@ -7,6 +7,7 @@ import About from "@/components/about";
 import Newsletter from "@/components/newsletter";
 import PartnerCTASection from "@/components/partner-bento-grid";
 import ReviewsSection from "@/components/reviews-section";
+import PurposeDrivenSection from "@/components/purpose-driven-section";
 
 // Loading fallback for DestinationSlider
 function DestinationSliderSkeleton() {
@@ -39,6 +40,7 @@ export default function Home() {
         <DestinationSlider />
       </Suspense>
       <PopularTrips />
+      <PurposeDrivenSection />
       <PopularLocations />
       <PartnerCTASection />
       <ReviewsSection />

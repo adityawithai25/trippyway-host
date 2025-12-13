@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import Image from "next/image";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { DESTINATIONS, type Destination } from "@/constants/destinations";
 import { cn } from "@/lib/utils";
@@ -115,20 +116,50 @@ export function DestinationSlider() {
                     )}
                   >
                     <div className="relative flex flex-col items-center justify-center transition-all duration-300">
-                      {/* Emoji Icon with aesthetic background */}
+                      {/* Image or Emoji Icon with aesthetic background */}
                       <div className={cn(
-                        "relative mb-1.5 flex h-12 w-12 items-center justify-center rounded-2xl text-2xl transition-all duration-300 shadow-sm",
+                        "relative mb-1.5 flex h-12 w-12 items-center justify-center rounded-2xl transition-all duration-300 shadow-sm overflow-hidden",
                         activeDestination === destination.id 
-                          ? "bg-gradient-to-br from-emerald-400 to-teal-500 shadow-emerald-200 shadow-lg scale-110 rotate-3" 
-                          : "bg-gradient-to-br from-gray-100 to-gray-200 group-hover:from-emerald-100 group-hover:to-teal-100 group-hover:shadow-md group-hover:scale-105 group-hover:-rotate-2"
+                          ? "shadow-emerald-200 shadow-lg scale-110 ring-2 ring-emerald-400" 
+                          : "group-hover:shadow-md group-hover:scale-105 group-hover:ring-2 group-hover:ring-emerald-200"
                       )}>
-                        <span 
-                          role="img" 
-                          aria-label={destination.name}
-                          className="relative z-10 drop-shadow-sm"
-                        >
-                          {destination.icon}
-                        </span>
+                        {destination.image ? (
+                          <>
+                            <Image
+                              src={destination.image}
+                              alt={destination.name}
+                              fill
+                              className={cn(
+                                "object-cover transition-all duration-300",
+                                activeDestination === destination.id 
+                                  ? "brightness-100" 
+                                  : "brightness-90 group-hover:brightness-100"
+                              )}
+                              sizes="48px"
+                            />
+                            <div className={cn(
+                              "absolute inset-0 bg-gradient-to-br transition-all duration-300",
+                              activeDestination === destination.id
+                                ? "from-emerald-400/30 to-teal-500/30"
+                                : "from-transparent to-transparent group-hover:from-emerald-400/20 group-hover:to-teal-500/20"
+                            )} />
+                          </>
+                        ) : (
+                          <div className={cn(
+                            "absolute inset-0 bg-gradient-to-br flex items-center justify-center text-2xl",
+                            activeDestination === destination.id 
+                              ? "from-emerald-400 to-teal-500" 
+                              : "from-gray-100 to-gray-200 group-hover:from-emerald-100 group-hover:to-teal-100"
+                          )}>
+                            <span 
+                              role="img" 
+                              aria-label={destination.name}
+                              className="relative z-10 drop-shadow-sm"
+                            >
+                              {destination.icon}
+                            </span>
+                          </div>
+                        )}
                       </div>
                       <span className={cn(
                         "whitespace-nowrap font-semibold text-xs transition-colors duration-300",
@@ -191,6 +222,8 @@ export function DestinationSlider() {
     </div>
   );
 }
+
+
 
 
 
